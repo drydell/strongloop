@@ -1,0 +1,1103 @@
+paths:
+  /roles:
+    post:
+      tags:
+        - role
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: role.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: role.upsert__put_roles
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    patch:
+      tags:
+        - role
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: role.upsert__patch_roles
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    get:
+      tags:
+        - role
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: role.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+      deprecated: false
+  /roles/replaceOrCreate:
+    post:
+      tags:
+        - role
+      summary: Replace an existing model instance or insert a new one into the data source.
+      operationId: role.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  /roles/upsertWithWhere:
+    post:
+      tags:
+        - role
+      summary: Update an existing model instance or insert a new one into the data source based on the where criteria.
+      operationId: role.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/roles/{id}/exists':
+    get:
+      tags:
+        - role
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'role.exists__get_roles_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/roles/{id}':
+    head:
+      tags:
+        - role
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'role.exists__head_roles_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - role
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: role.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: role.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'role.prototype.updateAttributes__put_roles_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    patch:
+      tags:
+        - role
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'role.prototype.updateAttributes__patch_roles_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/roles/{id}/replace':
+    post:
+      tags:
+        - role
+      summary: Replace attributes for a model instance and persist it into the data source.
+      operationId: role.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  /roles/findOne:
+    get:
+      tags:
+        - role
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: role.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  /roles/update:
+    post:
+      tags:
+        - role
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: role.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /roles/count:
+    get:
+      tags:
+        - role
+      summary: Count instances of the model matched by where from the data source.
+      operationId: role.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /widgets:
+    post:
+      tags:
+        - widget
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: widget.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+    put:
+      tags:
+        - widget
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: widget.upsert__put_widgets
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+    patch:
+      tags:
+        - widget
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: widget.upsert__patch_widgets
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+    get:
+      tags:
+        - widget
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: widget.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/widget'
+      deprecated: false
+  /widgets/replaceOrCreate:
+    post:
+      tags:
+        - widget
+      summary: Replace an existing model instance or insert a new one into the data source.
+      operationId: widget.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+  /widgets/upsertWithWhere:
+    post:
+      tags:
+        - widget
+      summary: Update an existing model instance or insert a new one into the data source based on the where criteria.
+      operationId: widget.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+  '/widgets/{id}/exists':
+    get:
+      tags:
+        - widget
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'widget.exists__get_widgets_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/widgets/{id}':
+    head:
+      tags:
+        - widget
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'widget.exists__head_widgets_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - widget
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: widget.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+    delete:
+      tags:
+        - widget
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: widget.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - widget
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'widget.prototype.updateAttributes__put_widgets_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+    patch:
+      tags:
+        - widget
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'widget.prototype.updateAttributes__patch_widgets_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+  '/widgets/{id}/replace':
+    post:
+      tags:
+        - widget
+      summary: Replace attributes for a model instance and persist it into the data source.
+      operationId: widget.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+  /widgets/findOne:
+    get:
+      tags:
+        - widget
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: widget.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/widget'
+      deprecated: false
+  /widgets/update:
+    post:
+      tags:
+        - widget
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: widget.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/widget'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /widgets/count:
+    get:
+      tags:
+        - widget
+      summary: Count instances of the model matched by where from the data source.
+      operationId: widget.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /doohickies:
+    post:
+      tags:
+        - doohickie
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: doohickie.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+    put:
+      tags:
+        - doohickie
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: doohickie.upsert__put_doohickies
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+    patch:
+      tags:
+        - doohickie
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: doohickie.upsert__patch_doohickies
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+    get:
+      tags:
+        - doohickie
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: doohickie.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/doohickie'
+      deprecated: false
+  /doohickies/replaceOrCreate:
+    post:
+      tags:
+        - doohickie
+      summary: Replace an existing model instance or insert a new one into the data source.
+      operationId: doohickie.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+  /doohickies/upsertWithWhere:
+    post:
+      tags:
+        - doohickie
+      summary: Update an existing model instance or insert a new one into the data source based on the where criteria.
+      operationId: doohickie.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+  '/doohickies/{id}/exists':
+    get:
+      tags:
+        - doohickie
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'doohickie.exists__get_doohickies_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/doohickies/{id}':
+    head:
+      tags:
+        - doohickie
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'doohickie.exists__head_doohickies_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - doohickie
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: doohickie.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+    delete:
+      tags:
+        - doohickie
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: doohickie.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - doohickie
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'doohickie.prototype.updateAttributes__put_doohickies_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+    patch:
+      tags:
+        - doohickie
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'doohickie.prototype.updateAttributes__patch_doohickies_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+  '/doohickies/{id}/replace':
+    post:
+      tags:
+        - doohickie
+      summary: Replace attributes for a model instance and persist it into the data source.
+      operationId: doohickie.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+  /doohickies/findOne:
+    get:
+      tags:
+        - doohickie
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: doohickie.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/doohickie'
+      deprecated: false
+  /doohickies/update:
+    post:
+      tags:
+        - doohickie
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: doohickie.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/doohickie'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /doohickies/count:
+    get:
+      tags:
+        - doohickie
+      summary: Count instances of the model matched by where from the data source.
+      operationId: doohickie.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+definitions:
+  role:
+    properties:
+      id:
+        type: number
+        format: double
+      description:
+        type: string
+    additionalProperties: false
+  x-any:
+    properties: {}
+  widget:
+    properties:
+      id:
+        type: number
+        format: double
+    additionalProperties: false
+  doohickie:
+    properties:
+      id:
+        type: number
+        format: double
+    additionalProperties: false
+basePath: /api
+swagger: '2.0'
+info:
+  x-ibm-name: strongloop
+  version: 1.0.0
+  title: strongloop
+schemes:
+  - https
+host: $(catalog.host)
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)

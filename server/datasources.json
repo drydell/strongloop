@@ -1,0 +1,6 @@
+{
+  "couch": {
+    "name": "couch",
+    "connector": "memory"
+  }
+}
